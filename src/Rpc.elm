@@ -1,4 +1,21 @@
-module Rpc exposing (Client(..), Rpc(..), Service(..), unary)
+module Rpc exposing
+    ( Client(..), Rpc(..), Service(..)
+    , unary
+    )
+
+{-| The `Rpc` module allows you to communicate with a gRPC-web server.
+
+
+# Defining a communication channel
+
+@docs Client, Rpc, Service
+
+
+# Executing requests
+
+@docs unary
+
+-}
 
 import Http exposing (Response(..))
 import Protobuf.Decode exposing (Decoder)
