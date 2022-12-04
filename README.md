@@ -20,7 +20,7 @@ yarn global add protoc-gen-elm
 ```bash
 protoc --elm_out=. api.proto
 ``` 
-2. Go to the [example](example/client/Main.elm)! The best way to find out how this library works is to see it in action!
+2. Go to the [example](example)! The best way to find out how this library works is to see it in action!
 
 ## 🙏 Special thanks
 
