@@ -27,7 +27,7 @@ import Request exposing (start)
 
     backend : Client
     backend =
-        Client.Client "http://localhost:9001"
+        Client "http://localhost:9001"
 
 -}
 type Client
@@ -38,30 +38,30 @@ type Client
 
     backend : Client
     backend =
-        Client.Client "http://localhost:9001"
+        Client "http://localhost:9001"
 
     userService : Service
     userService =
-        Client.Service "UserService" backend
+        Service "UserService" backend
 
 -}
 type Service
     = Service String Client
 
 
-{-| Defines an RPC that is to be called on a `Service`
+{-| Defines an RPC which will be called on a `Service`.
 
     backend : Client
     backend =
-        Client.Client "http://localhost:9001"
+        Client "http://localhost:9001"
 
     userService : Service
     userService =
-        Client.Service "UserService" backend
+        Service "UserService" backend
 
     getUser : Rpc Msg UserRequest UserResponse
     getUser =
-        Client.Rpc userService "GetUser" ReceiveUser encodeUserRequest decodeUserResponse
+        Rpc userService "GetUser" ReceiveUser encodeUserRequest decodeUserResponse
 
 -}
 type Rpc msg req res
@@ -72,15 +72,15 @@ type Rpc msg req res
 
     backend : Client
     backend =
-        Client.Client "http://localhost:9001"
+        Client "http://localhost:9001"
 
     userService : Service
     userService =
-        Client.Service "UserService" backend
+        Service "UserService" backend
 
     getUser : Rpc Msg UserRequest UserResponse
     getUser =
-        Client.Rpc userService "GetUser" ReceiveUser encodeUserRequest decodeUserResponse
+        Rpc userService "GetUser" ReceiveUser encodeUserRequest decodeUserResponse
 
     unaryCall : Cmd msg
     unaryCall =
