@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+option go_package = "./protos";
+
+message PingRequest {
+  optional string name = 1;
+}
+
+message PongResponse {
+  optional string message = 1;
+}
+
+service PingService {
+  rpc Ping (PingRequest) returns (PongResponse);
+}
